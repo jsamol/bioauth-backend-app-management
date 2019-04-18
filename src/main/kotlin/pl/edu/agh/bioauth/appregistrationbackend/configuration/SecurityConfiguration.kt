@@ -17,6 +17,7 @@ import org.springframework.security.core.authority.mapping.SimpleAuthorityMapper
 import org.springframework.security.core.session.SessionRegistryImpl
 import org.springframework.security.web.authentication.session.RegisterSessionAuthenticationStrategy
 import org.springframework.security.web.authentication.session.SessionAuthenticationStrategy
+import pl.edu.agh.bioauth.appregistrationbackend.util.UserRole
 
 @Configuration
 @EnableWebSecurity
@@ -34,7 +35,7 @@ class SecurityConfiguration : KeycloakWebSecurityConfigurerAdapter() {
         super.configure(http)
         http?.authorizeRequests()
                 ?.antMatchers("/api/**/*")
-                ?.hasRole("developer")
+                ?.hasRole(UserRole.DEVELOPER)
                 ?.anyRequest()
                 ?.permitAll()
     }
