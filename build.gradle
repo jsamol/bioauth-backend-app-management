@@ -35,6 +35,15 @@ dependencies {
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    // Keycloak
+    implementation 'org.keycloak:keycloak-spring-boot-starter:6.0.0'
+}
+
+dependencyManagement {
+    imports {
+        mavenBom 'org.keycloak.bom:keycloak-adapter-bom:6.0.0'
+    }
 }
 
 compileKotlin {
