@@ -32,7 +32,10 @@ class SecurityConfiguration : KeycloakWebSecurityConfigurerAdapter() {
     override fun configure(http: HttpSecurity?) {
         super.configure(http)
 
-        http?.authorizeRequests()
+        // TODO: Handle CSRF Token
+        http?.csrf()
+                ?.disable()
+                ?.authorizeRequests()
                 ?.antMatchers("/v1/**")
                 ?.authenticated()
                 ?.anyRequest()
