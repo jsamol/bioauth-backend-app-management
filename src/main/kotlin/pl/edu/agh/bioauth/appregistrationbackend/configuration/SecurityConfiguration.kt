@@ -16,6 +16,7 @@ import org.springframework.security.core.authority.mapping.SimpleAuthorityMapper
 import org.springframework.security.core.session.SessionRegistryImpl
 import org.springframework.security.web.authentication.session.RegisterSessionAuthenticationStrategy
 import org.springframework.security.web.authentication.session.SessionAuthenticationStrategy
+import org.springframework.security.web.csrf.CookieCsrfTokenRepository
 
 @Configuration
 @EnableWebSecurity(debug = true)
@@ -32,9 +33,9 @@ class SecurityConfiguration : KeycloakWebSecurityConfigurerAdapter() {
     override fun configure(http: HttpSecurity?) {
         super.configure(http)
 
-        // TODO: Handle CSRF Token
         http?.csrf()
-                ?.disable()
+                ?.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
+                ?.and()
                 ?.authorizeRequests()
                 ?.antMatchers("/api/v1/**")
                 ?.authenticated()
