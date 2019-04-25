@@ -40,6 +40,9 @@ dependencies {
 
     // Keycloak
     implementation 'org.keycloak:keycloak-spring-boot-starter:6.0.0'
+    
+    // Guava
+    implementation 'com.google.guava:guava:27.1-jre'
 }
 
 dependencyManagement {

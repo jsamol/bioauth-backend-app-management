@@ -5,5 +5,5 @@ import pl.edu.agh.bioauth.appregistrationbackend.util.KeyGenerator
 
 data class AppRequest(val name: String, val description: String?) {
 
-    fun toAppModel(userId: String): App = with (KeyGenerator) { App(userId, name, getAppId(), getAppSecret(), description) }
+    fun toAppModel(userId: String): App = with (KeyGenerator) { App(userId, name, getAppId(userId, name), getAppSecret(), description) }
 }
