@@ -36,7 +36,7 @@ class SecurityConfiguration : KeycloakWebSecurityConfigurerAdapter() {
         http?.csrf()
                 ?.disable()
                 ?.authorizeRequests()
-                ?.antMatchers("/v1/**")
+                ?.antMatchers("/api/v1/**")
                 ?.authenticated()
                 ?.anyRequest()
                 ?.permitAll()

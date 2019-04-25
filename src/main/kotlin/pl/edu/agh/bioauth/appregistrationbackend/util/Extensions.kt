@@ -1,8 +1,10 @@
 package pl.edu.agh.bioauth.appregistrationbackend.util
 
-import org.springframework.http.HttpMethod
-import org.springframework.web.cors.CorsConfiguration
+import org.keycloak.KeycloakPrincipal
+import org.keycloak.adapters.springsecurity.token.KeycloakAuthenticationToken
+import java.security.Principal
 
-var CorsConfiguration.allowedHttpMethods: List<HttpMethod>?
-    get() = this.allowedMethods?.mapNotNull { HttpMethod.resolve(it) }
-    set(value) { this.allowedMethods = value?.map { it.name } }
+fun Principal.getKeycloakUserId(): String? {
+    val keycloakPrincipal = (this as? KeycloakAuthenticationToken)?.principal as? KeycloakPrincipal<*>
+    return keycloakPrincipal?.keycloakSecurityContext?.token?.subject
+}
