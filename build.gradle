@@ -81,5 +81,3 @@ task buildUi(type: NpmTask) {
 }
 
 buildUi.dependsOn installDependencies
-build.dependsOn buildUi
-
