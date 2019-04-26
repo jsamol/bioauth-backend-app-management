@@ -4,8 +4,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class AppRegistrationBackendApplication
+class AppManagementApplication
 
 fun main(args: Array<String>) {
-    runApplication<AppRegistrationBackendApplication>(*args)
+    runApplication<AppManagementApplication>(*args)
 }
