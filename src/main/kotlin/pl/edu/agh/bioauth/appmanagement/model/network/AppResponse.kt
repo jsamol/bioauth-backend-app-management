@@ -1,7 +1,7 @@
-package pl.edu.agh.bioauth.appregistrationbackend.model.network
+package pl.edu.agh.bioauth.appmanagement.model.network
 
-import pl.edu.agh.bioauth.appregistrationbackend.model.database.App
-import pl.edu.agh.bioauth.appregistrationbackend.util.KeySecurityManager
+import pl.edu.agh.bioauth.appmanagement.model.database.App
+import pl.edu.agh.bioauth.appmanagement.util.KeySecurityManager
 
 data class AppResponse(val id: String,
                        val name: String,

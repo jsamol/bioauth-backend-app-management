@@ -1,4 +1,4 @@
-package pl.edu.agh.bioauth.appregistrationbackend.util
+package pl.edu.agh.bioauth.appmanagement.util
 
 object KeySecurityManager {
 

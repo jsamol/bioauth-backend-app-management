@@ -1,4 +1,4 @@
-package pl.edu.agh.bioauth.appregistrationbackend.configuration
+package pl.edu.agh.bioauth.appmanagement.configuration
 
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory
 import org.springframework.boot.web.server.ErrorPage

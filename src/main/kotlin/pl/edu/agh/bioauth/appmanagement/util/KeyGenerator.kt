@@ -1,4 +1,4 @@
-package pl.edu.agh.bioauth.appregistrationbackend.util
+package pl.edu.agh.bioauth.appmanagement.util
 
 import com.google.common.hash.Hashing
 import java.nio.charset.StandardCharsets

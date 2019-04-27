@@ -1,7 +1,7 @@
-package pl.edu.agh.bioauth.appregistrationbackend.repository
+package pl.edu.agh.bioauth.appmanagement.repository
 
 import org.springframework.data.mongodb.repository.MongoRepository
-import pl.edu.agh.bioauth.appregistrationbackend.model.database.App
+import pl.edu.agh.bioauth.appmanagement.model.database.App
 
 interface AppRepository : MongoRepository<App, String> {
     fun findByUserId(userId: String): List<App>

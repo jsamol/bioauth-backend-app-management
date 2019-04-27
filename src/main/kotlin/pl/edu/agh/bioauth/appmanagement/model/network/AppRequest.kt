@@ -1,8 +1,8 @@
-package pl.edu.agh.bioauth.appregistrationbackend.model.network
+package pl.edu.agh.bioauth.appmanagement.model.network
 
-import pl.edu.agh.bioauth.appregistrationbackend.model.database.App
-import pl.edu.agh.bioauth.appregistrationbackend.util.KeyGenerator
-import pl.edu.agh.bioauth.appregistrationbackend.util.KeySecurityManager
+import pl.edu.agh.bioauth.appmanagement.model.database.App
+import pl.edu.agh.bioauth.appmanagement.util.KeyGenerator
+import pl.edu.agh.bioauth.appmanagement.util.KeySecurityManager
 
 data class AppRequest(val name: String, val description: String?) {
 
