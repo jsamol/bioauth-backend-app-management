@@ -1,4 +1,4 @@
-package pl.edu.agh.bioauth.appregistrationbackend.model.database
+package pl.edu.agh.bioauth.appmanagement.model.database
 
 import org.bson.types.ObjectId
 import org.springframework.data.annotation.Id

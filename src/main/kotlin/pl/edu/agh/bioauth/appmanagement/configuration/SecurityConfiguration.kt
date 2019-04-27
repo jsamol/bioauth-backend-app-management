@@ -1,4 +1,4 @@
-package pl.edu.agh.bioauth.appregistrationbackend.configuration
+package pl.edu.agh.bioauth.appmanagement.configuration
 
 import org.keycloak.adapters.KeycloakConfigResolver
 import org.keycloak.adapters.springboot.KeycloakSpringBootConfigResolver

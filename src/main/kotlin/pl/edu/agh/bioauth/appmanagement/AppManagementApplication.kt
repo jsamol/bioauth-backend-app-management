@@ -1,4 +1,4 @@
-package pl.edu.agh.bioauth.appregistrationbackend
+package pl.edu.agh.bioauth.appmanagement
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

@@ -1,14 +1,14 @@
-package pl.edu.agh.bioauth.appregistrationbackend.controller
+package pl.edu.agh.bioauth.appmanagement.controller
 
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
 import org.springframework.web.bind.annotation.RestController
-import pl.edu.agh.bioauth.appregistrationbackend.model.network.AppRequest
-import pl.edu.agh.bioauth.appregistrationbackend.model.network.AppResponse
-import pl.edu.agh.bioauth.appregistrationbackend.repository.AppRepository
-import pl.edu.agh.bioauth.appregistrationbackend.util.getKeycloakUserId
+import pl.edu.agh.bioauth.appmanagement.model.network.AppRequest
+import pl.edu.agh.bioauth.appmanagement.model.network.AppResponse
+import pl.edu.agh.bioauth.appmanagement.repository.AppRepository
+import pl.edu.agh.bioauth.appmanagement.util.getKeycloakUserId
 import java.security.Principal
 
 @RestController
