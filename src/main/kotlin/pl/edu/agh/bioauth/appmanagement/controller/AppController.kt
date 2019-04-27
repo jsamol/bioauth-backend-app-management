@@ -1,6 +1,5 @@
 package pl.edu.agh.bioauth.appmanagement.controller
 
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
@@ -13,10 +12,7 @@ import java.security.Principal
 
 @RestController
 @RequestMapping("/api/v1/apps")
-class AppController {
-
-    @Autowired
-    private lateinit var appService: AppService
+class AppController(private val appService: AppService) {
 
     @RequestMapping(method = [RequestMethod.GET])
     fun getApps(principal: Principal): List<AppResponse> =
