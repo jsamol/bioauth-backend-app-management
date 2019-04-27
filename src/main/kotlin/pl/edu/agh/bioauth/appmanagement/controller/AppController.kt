@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod
 import org.springframework.web.bind.annotation.RestController
 import pl.edu.agh.bioauth.appmanagement.model.network.AppRequest
 import pl.edu.agh.bioauth.appmanagement.model.network.AppResponse
-import pl.edu.agh.bioauth.appmanagement.repository.AppRepository
+import pl.edu.agh.bioauth.appmanagement.service.AppService
 import pl.edu.agh.bioauth.appmanagement.util.getKeycloakUserId
 import java.security.Principal
 
@@ -16,24 +16,14 @@ import java.security.Principal
 class AppController {
 
     @Autowired
-    private lateinit var appRepository: AppRepository
+    private lateinit var appService: AppService
 
     @RequestMapping(method = [RequestMethod.GET])
-    fun getApps(principal: Principal): List<AppResponse> {
-        val apps = principal.getKeycloakUserId()?.let { userId ->
-            appRepository.findByUserId(userId)
-        }
-
-        return apps?.mapNotNull(AppResponse.Companion::fromAppModel) ?: emptyList()
-    }
+    fun getApps(principal: Principal): List<AppResponse> =
+            principal.getKeycloakUserId()?.let { appService.getAllUserApps(it) } ?: emptyList()
 
     @RequestMapping(method = [RequestMethod.POST])
-    fun addApp(principal: Principal, @RequestBody newApp: AppRequest): AppResponse? {
-        val app = principal.getKeycloakUserId()?.let { userId ->
-            appRepository.save(newApp.toAppModel(userId))
-        }
-
-        return AppResponse.fromAppModel(app)
-    }
+    fun addApp(principal: Principal, @RequestBody newApp: AppRequest): AppResponse? =
+            principal.getKeycloakUserId()?.let { appService.addApp(newApp, it) }
 
 }
